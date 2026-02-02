@@ -2,6 +2,8 @@
 
 A full-stack journaling app with **context-aware prompts**, **private sentiment and theme analysis**, and **reflection summaries**. Journal entries stay in your infrastructure; AI runs on-device (e.g. Ollama) or your chosen LLM provider.
 Youtube Link: https://youtu.be/B5DpggJ4APQ
+Youtube Link With Face: https://youtu.be/d6KcpjjgNLE
+
 **Stack:** React (Vite) + Tailwind · Auth (Node/Express, JWT) · Journal (Java/Spring Boot) · Prompt / Insights / Summary (Python) · PostgreSQL · Kafka.
 
 ---
