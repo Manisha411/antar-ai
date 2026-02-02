@@ -1,7 +1,7 @@
 # AI-Powered Journaling Companion
 
 A full-stack journaling app with **context-aware prompts**, **private sentiment and theme analysis**, and **reflection summaries**. Journal entries stay in your infrastructure; AI runs on-device (e.g. Ollama) or your chosen LLM provider.
-
+Youtube Link: https://youtu.be/B5DpggJ4APQ
 **Stack:** React (Vite) + Tailwind · Auth (Node/Express, JWT) · Journal (Java/Spring Boot) · Prompt / Insights / Summary (Python) · PostgreSQL · Kafka.
 
 ---
@@ -14,25 +14,6 @@ A full-stack journaling app with **context-aware prompts**, **private sentiment 
 - **Python 3.10+** — Prompt Service, AI consumer, Insights API, Summary Service
 
 ---
-
-## One-click run
-
-From the repo root, after creating `.env` (see [Environment](#environment) below):
-
-```bash
-make up
-```
-
-This starts infrastructure (Postgres, Zookeeper, Kafka) and all 7 app services in the background. First run installs dependencies and may take a few minutes. Open **http://localhost:3000** when ready.
-
-To stop everything:
-
-```bash
-make down
-```
-
-Logs: `logs/*.log`. For full control (e.g. run services in separate terminals), see [Run the app (per-service)](#3-run-the-app-per-service) below.
-
 ---
 
 ## Quick start (manual)
@@ -104,6 +85,25 @@ Then open **http://localhost:3000**, sign up, and create an entry.
 - **JWT_SECRET** — Must be the same for Auth (signs tokens) and Journal/Insights/Summary (verify). Set in `.env`; 32+ chars for HS256. Default in code is dev-only.
 - Optional overrides (e.g. `POSTGRES_HOST`, `KAFKA_BOOTSTRAP_SERVERS`, `ANALYTICS_DB_URL`) — see `.env.example`.
 
+---
+
+## One-click run
+
+From the repo root, after creating `.env` (see [Environment](#environment) below):
+
+```bash
+make up
+```
+
+This starts infrastructure (Postgres, Zookeeper, Kafka) and all 7 app services in the background. First run installs dependencies and may take a few minutes. Open **http://localhost:3000** when ready.
+
+To stop everything:
+
+```bash
+make down
+```
+
+Logs: `logs/*.log`. For full control (e.g. run services in separate terminals), see [Run the app (per-service)](#3-run-the-app-per-service) below.
 ---
 
 ## More
