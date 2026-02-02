@@ -1,0 +1,45 @@
+# Local env with secrets – do not commit
+.env
+.env.local
+.env.*.local
+
+# Auth service persisted user data (contains passwords)
+auth-service/data/
+
+# Dependencies and package locks (keep lockfiles for submission; ignore node_modules)
+node_modules/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+*.so
+.venv/
+venv/
+env/
+
+# Build / compile
+journal-service/target/
+frontend/dist/
+*.class
+*.jar
+*.war
+
+# Root docs – exclude; only README.md and RUNBOOK.md go to repo
+ARCHITECTURE.md
+DESIGN.md
+
+# docs/ – only DESIGN-DOC.md goes to repo
+docs/*
+!docs/DESIGN-DOC.md
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+*.swp
+*.swo
+*.log
+logs/
+.pids/

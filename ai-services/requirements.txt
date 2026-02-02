@@ -1,0 +1,9 @@
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+# kafka-python 2.0.2 fails on Python 3.12 (kafka.vendor.six.moves); use main branch
+kafka-python @ git+https://github.com/dpkp/kafka-python.git
+psycopg2-binary==2.9.9
+sqlalchemy==2.0.25
+python-dotenv==1.0.0
+openai>=1.0.0
+PyJWT>=2.8.0

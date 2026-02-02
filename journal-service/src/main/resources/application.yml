@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: journal-service
+  datasource:
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DB:journal_db}
+    username: ${POSTGRES_USER:journal}
+    password: ${POSTGRES_PASSWORD:journal_secret}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        default_schema: public
+    open-in-view: false
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+
+server:
+  port: ${SERVER_PORT:8080}
+
+# JWT (validate only; Auth Service issues tokens)
+# Default must match .env.example JWT_SECRET so Auth and Journal use the same secret when using the ready-to-use value.
+jwt:
+  secret: ${JWT_SECRET:journal-companion-dev-secret-32chars-minimum!!}
+  # Optional: accept X-User-Id for local/dev when JWT is not present
+  allow-x-user-id-header: ${ALLOW_X_USER_ID:true}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: when-authorized
+
+# Event (Kafka)
+journal:
+  topic: journal.entry.created
